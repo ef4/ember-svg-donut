@@ -5,8 +5,13 @@ export default Ember.Component.extend({
   layout,
   tagName: '',
   radius: 40,
-  fraction: 1,
+  value: 1,
+  max: 10,
   thickness: 0.5,
+
+  fraction: Ember.computed('value', 'max', function() {
+    return this.get('value') / this.get('max');
+  }),
 
   innerRadius: Ember.computed('radius', 'thickness', function() {
     return this.get('radius') * (1 - this.get('thickness'));
