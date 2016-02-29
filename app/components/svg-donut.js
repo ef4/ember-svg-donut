@@ -1,0 +1,1 @@
+export { default } from 'ember-svg-donut/components/svg-donut';
